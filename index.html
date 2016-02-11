@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" type="text/css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.min.css" type="text/css"/>
+</head>
+<body>
+
+<div class="container">
+  <h2>Input</h2>
+  <textarea id="input" rows="10" cols="80"></textarea>
+  
+  <h2>Output</h2>
+  <textarea id="output" rows="10" cols="80"></textarea>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+<script type="text/javascript">
+  $(document).on('ready', function () {
+    var input = $('#input');
+    var output = $('#output');
+
+    input.on('change', function () {
+      var text = input.val();
+      text = text.replace(/\n/g, " ");
+      text = text.replace(/"/g, '\\"');
+      while (text.indexOf("  ") != -1)
+        text = text.replace("  ", " ");
+      console.log(text);
+      output.html(text);
+    })
+  });
+</script>
+
+</body>
+</html>
