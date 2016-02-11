@@ -7,10 +7,10 @@
 
 <div class="container">
   <h2>Input</h2>
-  <textarea id="input" rows="10" cols="80"></textarea>
-  
+  <textarea id="input" rows="10" cols="80" placeholder="Copy here some SQL and press <tab>"></textarea>
+
   <h2>Output</h2>
-  <textarea id="output" rows="10" cols="80"></textarea>
+  <textarea id="output" rows="10" cols="80" placeholder="Get the one-liner here"></textarea>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -28,7 +28,8 @@
         text = text.replace("  ", " ");
       console.log(text);
       output.html(text);
-    })
+      output.select();
+    });
   });
 </script>
 
